@@ -1,0 +1,3 @@
+# school
+schoolmanagement
+please readme

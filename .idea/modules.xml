@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/business/business.iml" filepath="$PROJECT_DIR$/business/business.iml" />
+      <module fileurl="file://$PROJECT_DIR$/business/business-address/business-address.iml" filepath="$PROJECT_DIR$/business/business-address/business-address.iml" />
+      <module fileurl="file://$PROJECT_DIR$/business/business-app/business-app.iml" filepath="$PROJECT_DIR$/business/business-app/business-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/business/business-datarule/business-datarule.iml" filepath="$PROJECT_DIR$/business/business-datarule/business-datarule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/business/business-menu/business-menu.iml" filepath="$PROJECT_DIR$/business/business-menu/business-menu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/business/business-user/business-user.iml" filepath="$PROJECT_DIR$/business/business-user/business-user.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fundamental/fundamental.iml" filepath="$PROJECT_DIR$/fundamental/fundamental.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fundamental/fundamental-androidCasClient/fundamental-androidCasClient.iml" filepath="$PROJECT_DIR$/fundamental/fundamental-androidCasClient/fundamental-androidCasClient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fundamental/fundamental-command/fundamental-command.iml" filepath="$PROJECT_DIR$/fundamental/fundamental-command/fundamental-command.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fundamental/fundamental-communication/fundamental-communication.iml" filepath="$PROJECT_DIR$/fundamental/fundamental-communication/fundamental-communication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fundamental/fundamental-config/fundamental-config.iml" filepath="$PROJECT_DIR$/fundamental/fundamental-config/fundamental-config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fundamental/fundamental-datasource/fundamental-datasource.iml" filepath="$PROJECT_DIR$/fundamental/fundamental-datasource/fundamental-datasource.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fundamental/fundamental-exception/fundamental-exception.iml" filepath="$PROJECT_DIR$/fundamental/fundamental-exception/fundamental-exception.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fundamental/fundamental-fileupload/fundamental-fileupload.iml" filepath="$PROJECT_DIR$/fundamental/fundamental-fileupload/fundamental-fileupload.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fundamental/fundamental-jxl/fundamental-jxl.iml" filepath="$PROJECT_DIR$/fundamental/fundamental-jxl/fundamental-jxl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fundamental/fundamental-logger/fundamental-logger.iml" filepath="$PROJECT_DIR$/fundamental/fundamental-logger/fundamental-logger.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fundamental/fundamental-map/fundamental-map.iml" filepath="$PROJECT_DIR$/fundamental/fundamental-map/fundamental-map.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fundamental/fundamental-message/fundamental-message.iml" filepath="$PROJECT_DIR$/fundamental/fundamental-message/fundamental-message.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fundamental/fundamental-mongoConnector/fundamental-mongoConnector.iml" filepath="$PROJECT_DIR$/fundamental/fundamental-mongoConnector/fundamental-mongoConnector.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fundamental/fundamental-orm/fundamental-orm.iml" filepath="$PROJECT_DIR$/fundamental/fundamental-orm/fundamental-orm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fundamental/fundamental-redisConnector/fundamental-redisConnector.iml" filepath="$PROJECT_DIR$/fundamental/fundamental-redisConnector/fundamental-redisConnector.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fundamental/fundamental-report/fundamental-report.iml" filepath="$PROJECT_DIR$/fundamental/fundamental-report/fundamental-report.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fundamental/fundamental-sms/fundamental-sms.iml" filepath="$PROJECT_DIR$/fundamental/fundamental-sms/fundamental-sms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fundamental/fundamental-util/fundamental-util.iml" filepath="$PROJECT_DIR$/fundamental/fundamental-util/fundamental-util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fundamental/fundamental-websocket/fundamental-websocket.iml" filepath="$PROJECT_DIR$/fundamental/fundamental-websocket/fundamental-websocket.iml" />
+      <module fileurl="file://$PROJECT_DIR$/management/management.iml" filepath="$PROJECT_DIR$/management/management.iml" />
+      <module fileurl="file://$PROJECT_DIR$/management/management-business/management-business.iml" filepath="$PROJECT_DIR$/management/management-business/management-business.iml" />
+      <module fileurl="file://$PROJECT_DIR$/management/management-business/management-business-customer/management-business-customer.iml" filepath="$PROJECT_DIR$/management/management-business/management-business-customer/management-business-customer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/management/managementWeb/managementWeb.iml" filepath="$PROJECT_DIR$/management/managementWeb/managementWeb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/schoolManagement.iml" filepath="$PROJECT_DIR$/schoolManagement.iml" />
+    </modules>
+  </component>
+</project>

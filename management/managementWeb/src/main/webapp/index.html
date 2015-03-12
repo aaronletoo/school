@@ -1,0 +1,709 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+
+
+<head>
+<title>金色阳光学校管理系统</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<meta http-equiv="Cache-Control" content="no-store" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+
+	<link rel="stylesheet" type="text/css" href="jslib/themes/g/easyui.css">
+	<link rel="stylesheet" type="text/css" href="jslib/themes/g/icon.css">
+	<link rel="stylesheet" type="text/css" href="css/ps.css">
+	
+	
+	<!-- 	
+	<link rel="stylesheet" type="text/css" href="jslib/Validform/css/style.css">
+	<link rel="stylesheet" type="text/css" href="jslib/Validform/css/tablefrom.css">
+	<link rel="stylesheet" type="text/css" href="jslib/Validform/css/divfrom.css">
+	-->
+
+	<script type="text/javascript" src="jslib/jquery-1.8.0.min.js"></script>
+
+	
+	<script type="text/javascript" src="jslib/easyui.js"></script>
+	<script type="text/javascript" src="jslib/easyui-lang-zh_CN.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+
+	
+	<!-- 
+	<script type="text/javascript" src="jslib/Validform/js/Validform_v5.3.1_min.js"></script>
+	<script type="text/javascript" src="jslib/Validform/js/Validform_Datatype.js"></script>
+	<script type="text/javascript" src="jslib/Validform/js/datatype.js"></script>
+	-->
+	
+	<script type="text/javascript" src="js/js/highcharts.src.js"></script>
+	
+	<script type="text/javascript" src="js/ueditor/ueditor.config.js"></script>
+	<script type="text/javascript" src="js/ueditor/ueditor.all.min.js"></script>
+	<script type="text/javascript" src="js/ueditor/ueditor.all.js"></script>
+	
+	
+	<script type="text/javascript" src="jslib/upload/ajaxfileupload.js"></script>
+	
+	 
+</head>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="js/ueditor/ueditor.all.min.js"></script>
+
+<script type="text/javascript" >
+	var ctx = "jsyg";
+	
+		var authenticated = "authenticated";
+	
+</script>
+<script type="text/javascript">
+	function openpasswin(){
+		openWin("修改密码",ctx+"/user/toPassEdit",300,195);
+	}
+	function goTeacherPlanComment(){
+		addMainTab('教案点评汇总', ctx + '/period/toTeacherPC');
+	}
+	function openHuiF(){
+		addMainTab('回访统计', ctx + '/hschool/toHuiF');
+	}
+	function toStuLeave(){
+		window.location.href = ctx+'/studview/toLeavecreen';
+	}
+	function openPaper(id){
+		addMainTab('考试试卷', ctx + '/exam/showPaperEdit?id='+id);
+	}
+	function kaoshi(id){
+		window.location.href = ctx+'/exam/kaoshi?id='+id;
+	}
+	function serResult(id){
+		window.location.href = ctx+'/exam/serResult?id='+id;
+	}
+	function shuaka(){
+		addMainTab('刷卡考勤',ctx+'/period/toPunchCard');
+	}
+</script>
+
+<style>
+body{
+font-family:"微软雅黑","microfost yahei",Verdana, Arial;
+}
+</style>
+
+
+
+<body id="mainbody"  class="easyui-layout pinshan">
+	<div id="idDialog">
+
+	</div>
+		<div class="north" data-options="region:'north'" split='false' border='false'>
+			<div class="north_in">
+				  <div class="north_left"> <a href="#"><img src="jslib/themes/g/images/logo.png" border="0" class="logo"/><a href="#" class="today" id="showTime"></a> </div>
+				  <div class="north_right">
+				    <div class="n_icon n_icon_quit" align="center" ><a href="logout" style="width: 58px">退出系统</a></div>
+		
+				    <div class="n_icon n_icon_about" align="center" ><a id="editPassword" href="#" style="width: 58px" onclick="openpasswin()" >修改密码</a></div>
+				    <div class="n_icon n_icon_help" align="center" ><a  href="global/tohelp" target="_heet" style="width: 58px">帮助文档</a></div>
+					<div class="n_icon n_icon_chart"  align="center" onclick="toMS()"><a href="#" style="width: 58px" id="dongtai">首页<span id="mscount" class="impor2"></span></a></div>
+					
+					<div class="n_icon n_icon_over" align="center" ><a   href="studview/toLeavecreen" target="_heet" style="width: 58px;cursor: pointer;">离校管理</a></div>
+					
+					
+					<div class="n_icon n_icon_card" align="center" ><a  onclick="shuaka()" style="width: 58px;cursor: pointer;">刷卡考勤</a></div>
+					
+				  </div>	
+			</div>
+	    </div>
+ 	
+	<div class="west" data-options="region:'west'" split='false' border='false'>
+	<div class="log_name"><strong>张慕华</strong>,已登录</div>
+	
+		<div id="indexAccordion" class="easyui-accordion" data-options="border:false">
+		
+			<div id="id_customManager" iconCls="icon-cus" title="客户" default-open="customManager"> 
+			<span class="menu_break" ></span>
+					<ul id="customerMenuTree" class="easyui-tree" data-options="animate:true,dnd:true">
+						<li id="customManager">
+							<span >客户管理</span>
+						</li>
+					</ul>
+			</div>
+		
+			
+		
+			<span class="menu_break" ></span>
+			<div id="id_studentManager" title="学员" iconCls="icon-stu" ><span class="menu_break" ></span>
+					<ul id="studentMenuTree" class="easyui-tree" data-options="animate:true,dnd:true">
+						
+						<li id="studentManager">
+							<span >学员管理</span>
+						</li>
+						
+						
+						
+						<li id="depositRecord">
+							<span >定金记录</span>
+						</li>
+						
+						
+						
+							<li id="studentCard">
+								<span >学习卡管理</span>
+							</li>
+						
+					</ul>
+			</div>
+	
+	
+			
+			<span class="menu_break" ></span>
+			<div id="id_chargeManager" title="合同" iconCls="icon-con"><span class="menu_break" ></span>
+					<ul id="chargeMenuTree" class="easyui-tree" data-options="animate:true,dnd:true">
+
+						
+						
+						<li id="chargeManager">
+							<span >合同列表</span>
+						</li>
+						
+						
+						
+						<li id="returnContractManager">
+							<span >退费列表</span>
+						</li>
+						
+						
+						
+						<li id="pullDocument">
+							<span >挽单列表</span>
+						</li>
+						
+						
+						
+						<li id="toSpecialDiscountList">
+							<span >特批列表</span>
+						</li>
+						
+						
+
+					</ul>
+			</div>
+			
+			
+			
+			
+			<span class="menu_break"  ></span>
+			<div id="id_coursesManager" title="排课" iconCls="icon-sch"><span class="menu_break" ></span>
+				<ul id="coursesMenuTree" class="easyui-tree" data-options="animate:true,dnd:true">
+					<li id="coursesManager">
+						<span >排课信息</span>
+					</li>
+					
+					<li id="thisWeekCoursesManager">
+						<span >本周课程</span>
+					</li>
+					
+				</ul>
+			</div>
+			
+			
+			
+			<span class="menu_break"  ></span>
+			<div id="id_periodManager" title="课时" iconCls="icon-time"><span class="menu_break"  ></span>
+				<ul id="periodMenuTree" class="easyui-tree" data-options="animate:true,dnd:true">
+					
+					
+						<li id="periodManager">
+							<span >课时列表</span>
+						</li>
+					
+					
+					
+					<li id="punchManager">
+						<span >刷卡考勤</span>
+					</li>
+					
+						<li id="employeeRegister">
+							<span >手工登记</span>
+						</li>
+					
+						<li id="modifyPeriodList">
+							<span >调课列表</span>
+						</li>
+						
+						<li id="delPeriodList">
+							<span >删课列表</span>
+						</li>
+					
+					
+				</ul>
+			</div>
+			
+			
+			
+			 <span class="menu_break" ></span>
+			<div id="id_ygManager" title="OA" iconCls="icon-oa"> <span class="menu_break" ></span>
+				<ul id="oaMenuTree" class="easyui-tree" data-options="animate:true,dnd:true">
+						
+						<li id="ygManager">
+							<span >员工列表</span>
+						</li>
+						
+						
+						
+						<li id="oaCheckManager">
+							<span >员工考勤</span>
+						</li>
+						
+						
+						
+						<li id="wagesManager">
+							<span >工资列表</span>
+						</li>
+						
+						
+						
+						
+						<li id="leaverequest">
+							<span>请假申请</span>
+						</li>	
+						
+						
+					</ul>
+			</div>
+			
+			
+			
+			
+				
+			    <span class="menu_break" ></span>
+    			<div id="id_longhpManager" iconCls="icon-sta" title="统计">
+    				<ul id="stsMenuTree" class="easyui-tree" data-options="animate:true,dnd:true">
+						
+						<li id="longhpManager">
+							<span >财务统计</span>
+						</li>
+						
+						
+						
+						<li id="ordersManager">
+							<span>课时统计</span>
+						</li>
+						
+						
+						
+						<li id="peopleManager">
+							<span>人数统计</span>
+						</li>
+						
+						
+						
+						<li id="classoverrate">
+							<span>课时完成率</span>
+						</li>
+						
+						
+						
+						<li id="ststrend">
+							<span>走势图</span>
+						</li>
+						
+
+
+						
+						
+						<li id="callbackCustomer">
+							<span >客户回访统计</span>
+						</li>
+						
+						<li id="callbackStudent">
+							<span>学员回访统计</span>
+						</li>
+						
+						
+
+						
+						
+						
+					</ul>
+    			</div>
+			 
+
+
+
+	
+		<span class="menu_break" ></span>
+		<div id="teach_plan" title="教学计划" iconCls="icon-tp" ><span class="menu_break" ></span>
+				<ul id="tpTree" class="easyui-tree" data-options="animate:true,dnd:true">
+					
+					
+					<li id="myteachplan">
+						<span >我的教学计划</span>
+					</li>
+					
+					
+					
+					<li id="allteachplan">
+						<span >全部教学计划</span>
+					</li>
+					
+				</ul>
+		</div>
+	
+
+		
+			<span class="menu_break"  ></span>
+			<div id="id_hschoolManager" title="家校互联"  iconCls="icon-home"><span class="menu_break"  ></span>
+				<ul id="hschoolMenuTree" class="easyui-tree" data-options="animate:true,dnd:true">
+						
+						
+					
+							<li id="teachclass">
+								<span>授课记录</span>
+							</li>
+					
+					
+					
+					
+							<li id="hschoolManager">
+								<span >家校互联</span>
+							</li>
+					
+						
+					
+							<li id="stuScore">
+								<span>学员成绩</span>
+							</li>
+					
+					
+						<li id="stuleaveManager">
+							<span >学员离校</span>
+						</li>
+					
+					
+					
+					<li id="nightManager">
+						<span >晚自习管理</span>
+					</li>
+					
+					
+					<li id="phschoolManager">
+						<span >课时课表</span>
+					</li>
+					
+					
+					<li id="mycontract">
+						<span >我的合同</span>
+					</li>
+					<li id="smsList">
+						<span >短信记录</span>
+					</li>
+					
+					<li id="testMonthList">
+						<span >月测记录</span>
+					</li>
+					
+				
+					
+				</ul>
+			</div>
+			
+			
+        
+             <span class="menu_break" ></span>
+             <div id="examManager" iconCls="icon-cs" title="潜能测试" default-open="examManager">
+                <span class="menu_break" ></span>
+                <ul id="examMenuTree" class="easyui-tree" data-options="animate:true,dnd:true">
+                    
+                        <li id="questionManager">
+                            <span >试题管理</span>
+                        </li>
+                    
+                    
+                        <li id="paperManager">
+                            <span >试卷管理</span>
+                        </li>
+                    
+                    
+                        <li id="resultManager">
+                            <span >成绩管理</span>
+                        </li>
+                    
+
+                    
+                        <li id="ratingT">
+                            <span>个性化测试</span>
+                        </li>
+                    
+
+                </ul>
+            </div>
+        
+        
+        
+        
+
+        
+        
+			 
+			 <span class="menu_break" ></span>
+			<div id="id_chatManager" title="系统设置"   iconCls="icon-sys"> <span class="menu_break" ></span>
+					<ul id="systemMenuTree" class="easyui-tree" data-options="animate:true,dnd:true">
+						
+							<li id="commManager">
+								<span >公告栏</span>
+							</li>
+						
+						
+						
+						<li id="tuserManager">
+							<span >用户管理</span>
+						</li>			
+						
+						
+						
+						<li id="troleManager">
+							<span >角色管理</span>
+						</li>
+						
+												
+						
+						<li id="feeManager">
+							<span >收费标准</span>
+						</li>
+						
+						
+							
+						<li id="ctimeManager">
+							<span >上课时段</span>
+						</li>
+						
+						
+						
+						<li id="wagesfessManager">
+							<span >提成标准</span>
+						</li>
+						
+						
+						
+						<li id="rateManager">
+							<span >提成率</span>
+						</li>
+						
+						
+						
+						<li id="tdepmentManager">
+							<span>部门管理</span>
+						</li>
+						
+						
+						
+						<li id="positionManager">
+							<span >职位管理</span>
+						</li>
+						
+						
+						
+						<li id="scoremodeManager">
+							<span>考试模式</span>
+						</li>
+						
+						
+						
+						<li id="mechManager">
+							<span >考勤机</span>
+						</li>
+						
+						
+						
+						<li id="campusManager">
+							<span >校区管理</span>
+						</li>
+						
+						
+						
+						<li id="gradeManager">
+							<span >年级管理</span>
+						</li>
+					   
+					 
+						
+						<li id="subManager">
+							<span >科目管理</span>
+						</li>	
+						
+						
+						
+						<li id="sourceManager">
+							<span >客户来源</span>
+						</li>
+						
+						
+						
+						<li id="kinshipManager">
+							<span >亲属关系</span>
+						</li>
+						
+						
+						
+						<li id="documentManager">
+							<span >文档类型</span>
+						</li>
+						
+
+						
+						<li id="modeManager">
+							<span >学习模式</span>
+						</li>
+						
+						
+						
+						<li id="levelManager">
+							<span >员工级别</span>
+						</li>
+						
+						
+						
+						<li id="cardTManager">
+							<span >卡级别</span>
+						</li>
+						
+												
+						
+						<li id="leaveManager">
+							<span >离职类别</span>
+						</li>
+						
+						
+						
+						<li id="pSManager">
+							<span >岗位状态</span>
+						</li>
+						
+						
+						
+						<li id="globalManager">
+							<span >全局配置</span>
+						</li>
+						
+						
+					</ul>
+			</div>
+			 
+		</div>
+	</div>
+	<!-- 
+    <div id="tabmain" class="easyui-tabs core" data-options="region:'center',tools:'#tab-tools',onSelect:function(title){showTabTitle(title);}" > -->
+    <div id="tabmain" class="easyui-tabs core" data-options="region:'center',tools:'#tab-tools'" >
+	</div>
+	
+	
+	<div id="wintooltip">
+			
+		
+	</div>
+	
+	
+	<div id="commonmask">
+		处理中，请稍等...
+	</div>
+</body>
+<script type="text/javascript">
+var i = 0;
+currenttab = true;
+var getMSCountTime = null;
+var changeMSTime = null;
+setInterval("showTime()",1000);
+function showTabTitle(title){
+	/* if(title=="首页"){
+		$("#dongtai").removeClass("shank");
+		currenttab = true;
+		clearInterval(getMSCountTime);
+		clearInterval(changeMSTime);	
+	}else{
+		clearInterval(getMSCountTime);
+		getMSCountTime=null;
+		getMSCountTime = setInterval("getMSCount()",1000);
+		currenttab = false;
+	} */
+}
+function getMSCount(){
+	if(!currenttab){
+		$.post('chat/getMSize',null,
+				function(data){
+					if(data!="0"){
+						$("#mscount").html("+"+data);
+						clearInterval(changeMSTime);
+						changeMSTime=null;
+						changeMSTime = setInterval("changeMS()",300);
+					}
+			});
+	}
+}
+
+function changeMS(){
+	 i++;
+	if(parseInt(i%2) == 0){
+		$("#dongtai").removeClass("shank");
+	}else{
+		$("#dongtai").addClass("shank");
+	}
+}
+function toMS(){
+	$("#mscount").html("");
+	addMainTab("首页",ctx + '/chat/toChatMain',false);
+}
+
+function showTime(){
+	var now = new Date();
+    var year=now.getFullYear();
+    var month=now.getMonth()+1;
+    var day=now.getDate();
+    var hour=now.getHours()>9?now.getHours():"0"+now.getHours();
+    var minute=now.getMinutes()>9?now.getMinutes():"0"+now.getMinutes();
+    var second=now.getSeconds()>9?now.getSeconds():"0"+now.getSeconds();
+    var week=now.getDay();
+    var weekname="星期"+"天一二三四五六".split('')[week];
+    var nowdate=year+"-"+month+"-"+day+" "+hour+":"+minute+":"+second+"&emsp;"+weekname;
+    $("#showTime").html(nowdate);
+}
+
+
+$(function(){
+	
+	var height = $("#mainbody").layout().height();
+	var width = $("#mainbody").layout().width();
+	//wintooltip
+	$('#wintooltip').window({
+		title:'待处理事务',
+	    width: 300,
+	    height:200,
+	    top: parseInt(height) - 200,
+	    left: parseInt(width) - 300
+	});
+    reflushMessage();
+	function reflushMessage(){
+		$('#wintooltip').window('refresh', ctx + '/message/getMessageList');
+	}
+	
+	setInterval(function(){
+		$('#wintooltip').window('refresh', ctx + '/message/getMessageList');
+	},120000);
+	addMainTab("首页",ctx + '/chat/toChatMain',false);
+
+	 
+ 				addMainTab("龙虎榜",ctx + '/sts/toSignContractOrder',false);
+ 				
+	
+
+});
+
+
+
+//function openFirst(){
+//	addMainTab("首页",ctx + '/chat/toChatMain');
+//}
+
+</script>
+
+</html>

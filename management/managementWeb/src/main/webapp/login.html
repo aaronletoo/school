@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>教育管理系统</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!--<script src="static/jquery-validation/1.9.0/jquery.validate.min.js" type="text/javascript"></script>-->
+    <!--<script src="static/jquery-validation/1.9.0/messages_cn.js" type="text/javascript"></script>-->
+    <!--<link href="static/jquery-validation/1.9.0/validate.css" type="text/css" rel="stylesheet" />-->
+    <link href="jslib/themes/g/log.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="jslib/jquery-1.8.0.min.js"></script>
+
+    <!--<script src="jslib/themes/g/jquery-1.4.2.js" type="text/javascript" /></script>-->
+    <script>
+    $(function(){
+
+        $(".label_div .index_input").each(function(){
+            var thisVal=$(this).val();
+            if(thisVal!=""){
+                $(this).siblings("span").hide();
+            }else{
+                $(this).siblings("span").show();
+            }
+            //聚焦型输入框验证
+            $(this).focus(function(){
+                $(this).siblings("span").hide();
+            }).blur(function(){
+                var val=$(this).val();
+                if(val!=""){
+                    $(this).siblings("span").hide();
+                }else{
+                    $(this).siblings("span").show();
+                }
+            });
+        })
+
+
+    });
+
+    </script>
+
+    <style type="text/css">
+
+        .colorset {color: #FF0000}
+
+    </style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="login">
+    <div class="login_top"></div>
+    <div class="login_block">
+
+        <div class="login_logo"></div>
+        <form id="loginForm"  action="j_spring_security_check" method="post">
+            <div class="label_div label_name"><span>账号：</span>
+                <input type="text" id="username" name="j_username" size="40" value="" class="required index_input input_txt"/>
+            </div>
+            <div class="label_div label_code" ><span>密码：</span>
+                <input type="password" id="password" name="j_password" value="" size="40" class="required index_input input_code" />
+            </div>
+
+
+
+            <input id="submit"   type="submit" value="登录" class="index_btn"/>
+        </form>
+    </div>
+    <!-- 版权信息区域 -->
+<!--    <div class="login_footer">
+        <div class="login_footer_con"> Copyright © 2013 xhtrj. All Rights Reserved&nbsp;&nbsp;深圳校互通信息技术有限公司&nbsp;&nbsp;<br />
+            负责人: 刘经理&nbsp;&nbsp;电话：0755-25724582<br/>
+            技术支持：<a href="http://www.xhtrj.com" target="_blank" >校互通科技</a><br/>
+
+            建议使用google浏览器<a href="ChromeStandaloneSetup.exe" ><font color="blue">点击下载</font></a></div>
+    </div>-->
+</div>
+
+
+
+</body>
+</html>

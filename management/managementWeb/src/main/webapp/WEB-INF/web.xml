@@ -36,6 +36,7 @@
     <servlet>
         <servlet-name>jerseyServlet</servlet-name>
         <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+        <!--配置默认的资源包路径，使用默认的配置类加载资源-->
         <init-param>
             <param-name>jersey.config.server.provider.packages</param-name>
             <param-value>org.whut.platform.business,org.whut.management.business</param-value>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.whut.management.business.customer.mapper.CustomerMapper">
+    <sql id="Customer_fields">
+         ID,CUS_NAME,CUS_TYPE,TEL,CAMPUS_ID,STU_NAME,STU_SEX,GRADE_ID,STU_TEL,SCHOOL_NAME,CUSTOMER_FROM,TEACH_MODE_ID,CREATE_DATE,MARK,RECORD_USER_ID,STATE,ZXUSER_ID,APPID
+    </sql>
+    <resultMap id="CustomerResultMap" type="Customer">
+        <id property="id" column="ID"/>
+        <result property="cus_name" column="CUS_NAME"/>
+        <result property="cus_type" column="CUS_TYPE"/>
+        <result property="tel" column="TEL"/>
+        <result property="campus_id" column="CAMPUS_ID"/>
+        <result property="stu_name" column="STU_NAME"/>
+        <result property="stu_sex" column="STU_SEX"/>
+        <result property="grade_id" column="GRADE_ID"/>
+        <result property="stu_tel" column="STU_TEL"/>
+        <result property="school_name" column="SCHOOL_NAME"/>
+        <result property="customer_from" column="CUSTOMER_FROM"/>
+        <result property="teach_mode_id" column="TEACH_MODE_ID"/>
+        <result property="create_date" column="CREATE_DATE"/>
+        <result property="mark" column="MARK"/>
+        <result property="record_user_id" column="RECORD_USER_ID"/>
+        <result property="state" column="STATE"/>
+        <result property="zxuser_id" column="ZXUSER_ID"/>
+        <result property="appId" column="APPID"/>
+    </resultMap>
+    <select id="getList" parameterType="java.lang.Long" resultType="map">
+        SELECT *
+        FROM customer
+        WHERE appId=#{appId}
+    </select>
+</mapper>

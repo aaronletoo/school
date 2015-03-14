@@ -41,6 +41,19 @@ public class JsonMapper {
 
     private ObjectMapper mapper;
 
+    /**
+     * 通过Inclusion创建ObjectMapper对象
+     *
+     * { Inclusion Inclusion 对象枚举}
+     *
+     *     { Inclusion Inclusion.ALWAYS 全部列入}
+     *     { Inclusion Inclusion.NON_DEFAULT 字段和对象默认值相同的时候不会列入}
+     *     { Inclusion Inclusion.NON_EMPTY 字段为NULL或者""的时候不会列入}
+     *     { Inclusion Inclusion.NON_NULL 字段为NULL时候不会列入}
+     * @param inclusion 传入一个枚举值, 设置输出属性
+     * @return 返回ObjectMapper对象
+     */
+
     public JsonMapper(Inclusion inclusion) {
         mapper = new ObjectMapper();
         // 设置输出时包含属性的风格
